@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
-<h1>Tutorial: Installing and Configuring osTicket on Azure VM</h1>
+<h1>Installing and Configuring osTicket on Azure VM</h1>
 <p>This tutorial guides you through setting up osTicket on a Windows 10 Virtual Machine (VM) in Azure. You'll create the VM, install necessary software, and configure osTicket for helpdesk management.</p>
 
 <h2>Environments and Technologies to use</h2>
