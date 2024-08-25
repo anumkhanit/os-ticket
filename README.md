@@ -135,4 +135,4 @@ osTicket Installation Files: https://drive.google.com/drive/u/1/folders/1APMfNyf
 
 ## Conclusion
 
-By following these steps, you have successfully installed and configured osTicket on your Azure VM. You’ve set up a helpdesk system capable of managing tickets, configured roles and departments, and ensured that your system is ready for use. Congratulations on completing the setup!
+Congratulations, you’ve set up a helpdesk system capable of managing tickets, configured roles and departments, and ensured that your system is ready for use.
