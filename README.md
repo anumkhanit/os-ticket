@@ -37,9 +37,9 @@ osTicket Installation Files: https://drive.google.com/drive/u/1/folders/1APMfNyf
 ## Part 2: Install osTicket
 
 1. **Prepare the VM**:
-   - **VM Name**: Vm-osticket
-   - **Username**: labuser (or your choice)
-   - **Password**: osTicketPassword1! (or your choice)
+   - **VM Name**: `Vm-osticket`
+   - **Username**: `labuser` (or your choice)
+   - **Password**: `osTicketPassword1!` (or your choice)
 
 2. **Install Required Software**:
    - **IIS Setup**:
