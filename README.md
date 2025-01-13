@@ -29,10 +29,13 @@ osTicket Installation Files: https://drive.google.com/drive/u/1/folders/1APMfNyf
    - Go to your Azure portal and create a new Resource Group.
    - Create a Virtual Network (Vnet)
 
-2. **Create a Windows 10 Virtual Machine (VM)**:
+2. **Create a Windows 10 Virtual Machine (VM) for main user**:
    - Select the Resource Group you created.
    - Create a Windows 10 VM.
    - Choose the VNet you have created.
+
+3. **Create a Windows 10 Virtual Machine (VM) for dummy user**:
+   - Repeat Step 2 before moving
   
 -----
 
