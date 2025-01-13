@@ -33,9 +33,6 @@ osTicket Installation Files: https://drive.google.com/drive/u/1/folders/1APMfNyf
    - Select the Resource Group you created.
    - Create a Windows 10 VM.
    - Choose the VNet you have created.
-
-3. **Create a Windows 10 Virtual Machine (VM) for dummy user**:
-   - Repeat Step 2 before moving
   
 -----
 
