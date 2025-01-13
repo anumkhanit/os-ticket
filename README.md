@@ -23,14 +23,16 @@ osTicket Installation Files: https://drive.google.com/drive/u/1/folders/1APMfNyf
 
 -----
 
-## Part 1: Create the Virtual Machine
+## Part 1: Create and Configure Resources
 
-1. **Create a Resource Group**:
-   - Start by creating a new Resource Group in Azure.
+1. **Create a Resource Group & Virtual Network**:
+   - Go to your Azure portal and create a new Resource Group.
+   - Create a Virtual Network (Vnet)
 
-2. **Create a Windows 10 VM**:
-   - Create a Windows 10 VM with 2-4 Virtual CPUs.
-   - Allow the VM setup to create a new Virtual Network (VNet).
+2. **Create a Windows 10 Virtual Machine (VM)**:
+   - Select the Resource Group you created.
+   - Create a Windows 10 VM.
+   - Choose the VNet you have created.
   
 -----
 
