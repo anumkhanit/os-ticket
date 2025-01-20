@@ -38,7 +38,10 @@ osTicket Installation Files: https://drive.google.com/drive/u/1/folders/1APMfNyf
 
 ## Part 2: Install osTicket
 
-1. **Install Required Software**:
+1. **Head to Control Panel on the Windows 10 Start Menu**:
+   - **Click on Control**
+      - Click on the 'Turn Windows On or Off'
+3. **Install Required Software**:
    - **IIS Setup**:
      - Open IIS Manager and install the following:
        - CGI and Common HTTP Features
