@@ -41,7 +41,7 @@ osTicket Installation Files: https://drive.google.com/drive/u/1/folders/1APMfNyf
 1. **Head to Control Panel on the Windows 10 Start Menu**:
    - **Click on Control:**
       - Click on the 'Turn Windows On or Off'
-3. **Install Required Software**:
+2. **Install Required Software**:
    - **IIS Setup**:
      - Open IIS Manager and install the following:
        - CGI and Common HTTP Features
@@ -66,16 +66,16 @@ osTicket Installation Files: https://drive.google.com/drive/u/1/folders/1APMfNyf
 
 -----
 
-2. **Configure IIS**:
+3. **Configure IIS**:
    - Open IIS Manager as an admin.
    - Register PHP in IIS and reload IIS by stopping and starting the server.
 
-3. **Install osTicket**:
+4. **Install osTicket**:
    - Download osTicket v1.15.8 from the Installation Files.
    - Extract and copy the “upload” folder to `C:\inetpub\wwwroot` and rename it to `osTicket`.
    - Reload IIS (stop and start the server).
 
-4. **Configure osTicket**:
+5. **Configure osTicket**:
    - Visit `http://localhost/osTicket` and continue the setup.
    - Rename `ost-sampleconfig.php` to `ost-config.php` and assign permissions to "Everyone" with "All" access.
    - Set up osTicket through the web interface:
@@ -83,7 +83,7 @@ osTicket Installation Files: https://drive.google.com/drive/u/1/folders/1APMfNyf
      - **MySQL Username**: root
      - **MySQL Password**: Password1
 
-5. **Complete Installation**:
+6. **Complete Installation**:
    - Browse to the helpdesk login page: `http://localhost/osTicket/scp/login.php`.
    - Clean up by deleting `C:\inetpub\wwwroot\osTicket\setup` and setting `ost-config.php` to "Read" only.
   
