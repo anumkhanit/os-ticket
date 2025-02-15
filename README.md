@@ -45,15 +45,15 @@
   
 5. **Install PHP and Dependencies**
    - From the `osTicket-Installation-Files` folder:
-	   •	Install PHP Manager for IIS (`PHPManagerForIIS_V1.5.0.msi`).
-	   •	Install the Rewrite Module (`rewrite_amd64_en-US.msi`).
+	- Install PHP Manager for IIS (`PHPManagerForIIS_V1.5.0.msi`).
+	- Install the Rewrite Module (`rewrite_amd64_en-US.msi`).
    - Create a folder at C:\PHP.
-      • Unzip (`PHP 7.3.8 (php-7.3.8-nts-Win32-VC15-x86.zip`) into C:\PHP.
-      • Install (`VC_redist.x86.exe`).
-      • Install MySQL 5.5.62 (`mysql-5.5.62-win32.msi`).
-	      • Select Typical Setup.
-	      •	After installation, choose Standard Configuration.
-	      •	Set Username: root and Password: root.
+      - Unzip (`PHP 7.3.8 (php-7.3.8-nts-Win32-VC15-x86.zip`) into C:\PHP.
+      - Install (`VC_redist.x86.exe`).
+      - Install MySQL 5.5.62 (`mysql-5.5.62-win32.msi`).
+	       - Select Typical Setup.
+	       - After installation, choose Standard Configuration.
+	       - Set Username: root and Password: root.
      
 6. **Configure IIS and PHP**
    - Open IIS as Administrator.
@@ -61,41 +61,41 @@
    - Reload IIS: Stop and Start the server.
 
 7. **Install osTicket**
-   - 	From the `osTicket-Installation-Files` folder:
-	   •	Unzip `osTicket-v1.15.8.zip`.
-	   •	Copy the upload folder to `C:\inetpub\wwwroot`.
-	   •	Rename the folder from `upload` to `osTicket`.
+   - From the `osTicket-Installation-Files` folder:
+	  - Unzip `osTicket-v1.15.8.zip`.
+	  - Copy the upload folder to `C:\inetpub\wwwroot`.
+	  - Rename the folder from `upload` to `osTicket`.
    - Reload IIS (Stop and Start the server).
   
 8. **Enable PHP Extensions**
    - In IIS, go to `Sites` > `Default` > `osTicket`.
    - Click `PHP Manager`.
    - Enable the following extensions:
-     • php_imap.dll
-     • php_intl.dll
-     • php_opcache.dll
+     - php_imap.dll
+     - php_intl.dll
+     - php_opcache.dll
    - Refresh the osTicket site in your browser.
 
 9. **Configure osTicket**
    - Rename `ost-sampleconfig.php` to `ost-config.php`:
-     • Path from: C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php
-     • Rename to: C:\inetpub\wwwroot\osTicket\include\ost-config.php.
+     - Path from: C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php
+     - Rename to: C:\inetpub\wwwroot\osTicket\include\ost-config.php.
    - Set Permissions on `ost-config.php`:
-     • Disable inheritance and remove all permissions.
-     • Add Everyone with Full Control.
+     - Disable inheritance and remove all permissions.
+     - Add Everyone with Full Control.
 
 10. **Complete osTicket Setup in Browser**
    - Install HeidiSQL from the `osTicket-Installation-Files` folder.
    - Open HeidiSQL and create a new session:
-      •	Username: root
-      • Password: root
+      - Username: root
+      - Password: root
    - Connect to the session and create a database named osTicket.
 
 11. **Complete osTicket Setup in Browser**
    - Continue setting up osTicket in the browser:
-      •	MySQL Database: osTicket
-	   •	MySQL Username: root
-	   •	MySQL Password: root
+      - MySQL Database: osTicket
+      	- MySQL Username: root
+        - MySQL Password: root
    - Click Install Now!.
 
 12. **Access osTicket**
