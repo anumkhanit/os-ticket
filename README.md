@@ -34,7 +34,7 @@
 ## Part 2: osTicket Installation Files
 
 3. **Prepare osTicket Installation Files**
-   - Download 'osTicket-Installation-Files.zip' to the desktop.
+   - Download "osTicket-Installation-Files.zip" to the desktop.
    - Unzip the folder and rename it to “osTicket-Installation-Files”.
   
 4. **Install IIS with CGI**
