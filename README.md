@@ -9,7 +9,7 @@
 
 - Microsoft Azure (Virtual Machines)
 - Microsoft RD Client (Remote Desktop)
-- Installtion Links
+- Installtion Links - (https://drive.google.com/uc?export=download&id=1b3RBkXTLNGXbibeMuAynkfzdBC1NnqaD)
 
 <h2>Operating Systems to use</h2>
 
