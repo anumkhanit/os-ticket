@@ -2,14 +2,25 @@
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
-<h1>Installing and Configuring osTicket on Azure VM</h1>
+<h1>🎟️ Setting Up osTicket on an Azure Windows VM</h1>
 <p>This tutorial will guide you through setting up osTicket on a Windows 10 Azure Virtual Machine (VM), including installing IIS, PHP, MySQL, and the osTicket application.</p>
+
+<h1>🧠 Overview</h1>
+
+<p>You will be installing and configuring osTicket on a Windows 10 Virtual Machine in Microsoft Azure. Perfect for IT students, system administrators, and helpdesk engineers learning ticketing systems in the cloud.</p>
+
+<h2>What You’ll Learn:</h2>
+
+- How to deploy a Windows 10 VM in Azure
+- How to install and configure IIS, PHP, MySQL, and osTicket
+- How to manage roles, users, departments, SLAs, and more within osTicket
+- How to use your local machine (macOS or Windows) to remote into your Azure VM
 
 <h2>Environments and Technologies to use</h2>
 
 - Microsoft Azure (Virtual Machines)
 - Microsoft RD Client (Remote Desktop)
-- Installtion Links - (https://drive.google.com/uc?export=download&id=1b3RBkXTLNGXbibeMuAynkfzdBC1NnqaD)
+- Required Files to Use - [Download osTicket Setup Package](https://drive.google.com/uc?export=download&id=1b3RBkXTLNGXbibeMuAynkfzdBC1NnqaD)
 
 <h2>Operating Systems to use</h2>
 
@@ -18,140 +29,166 @@
 
 -----
 
-## Part 1: Create the Virtual Machine
+## 🧱 Part 1: Create the Azure Virtual Machine
 
-1. **Create a Resource Group & Virtual Network**:
-   - VM Name: osticket-vm
-   - vCPUs: 4
+1. Create a Resource Group & Virtual Network:
+   - VM Name: `osticket-vm`
+   - vCPUs: `4`
    - Username: (any easy username to remember)
    - Password: (any easy password to remember)
 
-2. **Log Into the VM**
+2. Log Into the VM
    - Use Remote Desktop to log into the VM (osticket-vm)
   
 -----
 
-## Part 2: osTicket Installation Files
+## ⚙️ Part 2: Install osTicket and Components
 
-3. **Prepare osTicket Installation Files**
-   - Download `osTicket-Installation-Files.zip` to the desktop.
-   - Unzip the folder and rename it to `osTicket-Installation`.
-  
-4. **Install IIS with CGI**
-   - Open `Control Panel`
-   - Turn on `Windows On or Off` (which is the Windows Features).
-   - Navigate to `World Wide Web Services` > `Application Development Features`.
-   - Check `CGI`.
-  
-5. **Install PHP and Dependencies**
-   - From the `osTicket-Installation` folder:
-	- Install PHP Manager for IIS (`PHPManagerForIIS_V1.5.0.msi`).
-	- Install the Rewrite Module (`rewrite_amd64_en-US.msi`).
-   - Create a folder at `C:\PHP`.
-      - Unzip (`PHP 7.3.8 (php-7.3.8-nts-Win32-VC15-x86.zip`) into `C:\PHP`.
-      - Install (`VC_redist.x86.exe`).
-      - Install MySQL 5.5.62 (`mysql-5.5.62-win32.msi`).
-	       - Select Typical Setup.
-	       - After installation, choose Standard Configuration.
-	       - Set Username - `root` and Password - `root`.
-     
-6. **Configure IIS and PHP**
-   - Open IIS as Administrator.
-   - Register `PHP: In PHP Manager`, add the PHP executable: `C:\PHP\php-cgi.exe`.
-   - Reload IIS: Stop and Start the server.
+<h2>📂 Step 1: Prepare Installation Files</h2>
 
-7. **Install osTicket**
-   - From the `osTicket-Installation` folder:
-	  - Unzip `osTicket-v1.15.8.zip`.
-	  - Copy the upload folder to `C:\inetpub\wwwroot`.
-	  - Rename the folder from `upload` to `osTicket`.
-   - Reload IIS (Stop and Start the server).
+1. Download `osTicket-Installation-Files.zip` from the link above.
+2. Extract and rename the folder to `osTicket-Installation`
   
-8. **Enable PHP Extensions**
-   - In IIS, go to `Sites` > `Default` > `osTicket`.
-   - Click `PHP Manager`.
-   - Enable the following extensions:
-     - php_imap.dll
-     - php_intl.dll
-     - php_opcache.dll
-   - Refresh the osTicket site in your browser.
+<h2>🌐 Step 2: Install IIS with CGI</h2>
 
-9. **Configure osTicket**
-   - Rename `ost-sampleconfig.php` to `ost-config.php`:
+1. Go to `Control Panel` > `Programs` > `Turn Windows Features on or off`
+2. Enable:
+     - `Internet Information Services (IIS)`
+     - Under `Application Development Features` > check ✅ `CGI`
+
+<h2>🐘 Step 3: Install PHP and Dependencies</h2>
+
+1. From the `osTicket-Installation folder`, install:
+      - `PHPManagerForIIS_V1.5.0.msi`
+      - Then `rewrite_amd64_en-US.msi`
+2. Create and unzip to `C:\PHP`:
+      - `php-7.3.8-nts-Win32-VC15-x86.zip`
+3. Install `MySQL`:
+      - `mysql-5.5.62-win32.msi` → Select Typical Setup
+	  • Configure with:
+	  • Username: `root`
+	  • Password: `root`
+
+<h2>🔧 Step 4: Configure IIS with PHP</h2>
+
+1. Open `IIS Manager` as Administrator
+2. Use `PHP Manager` to register: `C:\PHP\php-cgi.exe`
+3. Restart `IIS` (Stop and Start)
+
+<h2>📦 Step 5: Install osTicket</h2>
+
+1. From the `osTicket-Installation` folder:
+       - Unzip `osTicket-v1.15.8.zip`
+	  • Copy upload folder to: `C:\inetpub\wwwroot`
+       - Rename it to `osTicket`
+2. Restart `IIS` again
+  
+<h2>🧩 Step 6: Enable PHP Extensions</h2>
+
+1. In IIS, go to `Sites` > `Default` > `osTicket`.
+2. Click `PHP Manager`.
+3. Enable the following extensions:
+     - `php_imap.dll`
+     - `php_intl.dll`
+     - `php_opcache.dll`
+4. Refresh the osTicket site in your browser.
+
+<h2>🛠️ Step 7: Configure osTicket Files</h2>
+
+1. Rename config file: 
      - Path from: `C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php`
-     - Rename to: `C:\inetpub\wwwroot\osTicket\include\ost-config.php`. ***(Another word, remove the sample)***
-   - Set Permissions on `ost-config.php`:
-     - Disable inheritance and remove all permissions.
-     - Add `Everyone` with `Full Control`.
+     - Rename to: `C:\inetpub\wwwroot\osTicket\include\ost-config.php`.
+***(Another word, remove the sample)***
 
-10. **Complete osTicket Setup in Browser**
-   - Install HeidiSQL from the `osTicket-Installation` folder.
-   - Open HeidiSQL and create a new session:
-      - Username: `root`
-      - Password: `root`
-   - Connect to the session and create a database named osTicket.
+2. Set file permissions:
+    - Disable inheritance
+    - Remove all permissions
+    - Add `Everyone` → `Full Control`
 
-11. **Complete osTicket Setup in Browser**
-   - Continue setting up osTicket in the browser:
-      - MySQL Database: `osTicket`
-      	- MySQL Username: `root`
-        - MySQL Password: `root`
-   - Click `Install Now!`.
+<h2>🌐 Step 8: Complete Setup in Browser</h2>
 
-12. **Access osTicket**
-   - Helpdesk Login Page: `http://localhost/osTicket/scp/login.php`
-   - End User URL: `http://localhost/osTicket/`
+1. Install `HeidiSQL` from the installation folder
+2. Create a new session:
+     • Username: `root`
+     • Password: `root`
+     • Create database: `osTicket`
+3. Open a browser in the VM: `http://localhost/osTicket`
+4. Enter:
+     • Database: `osTicket`
+     • MySQL Username: `root`
+     • MySQL Password: `root`
+     • Click: `Install Now`
 
-13. **Cleanup**
-   - Delete the setup folder from `C:\inetpub\wwwroot\osTicket`.
-   - Set Permissions on `ost-config.php` to `Read` only.
+<h2>🔐 Step 9: Secure Your Installation</h2>
+
+1. Access:
+      • Admin: `http://localhost/osTicket/scp/login.php`
+      • End User: `http://localhost/osTicket/`
+2. Delete the /setup folder
+3. Set `ost-config.php` to `Read-only`
 
 -----
 
-## Part 3: Post-Installation Setup
+## 🧭 Part 3: Post-Installation Setup
 
-1. **Configure Roles**:
-   - Go to Admin Panel -> Agents -> Roles
-   - Add roles such as Supreme Admin.
+1. 👥 Configure Roles & Agents
+    - Go to: `Admin Panel` → `Agents` → `Roles`
+       • Add: `Supreme Admin`, `Support Staff`, etc.
+       • Go to: `Agents` → `Add New`
+       • Add agents like `Jane`, `John`, etc.
 
-2. **Configure Departments**:
-   - Go to Admin Panel -> Agents -> Departments
-   - Add departments like System Administrators.
+2. 🏢 Set Up Departments and Teams
+     - Go to: `Agents` → `Departments` → `Add “System Administrators”`
+     - Go to: `Agents` → `Teams` → `Add “Level I”` and `“Level II Support”`
 
-3. **Configure Teams**:
-   - Go to Admin Panel -> Agents -> Teams
-   - Add teams for Level I and Level II Support.
+3. 🧑‍💼 Allow Ticket Creation
+     - Go to: `Settings` → `User Settings`
+     - Set to: Require registration and login to create tickets
+  
+4. ⏱️ Configure SLAs
+     - Go to: `Manage` → `SLA`
+	• Sev-A: 1 hour, 24/7
+	• Sev-B: 4 hours, 24/7
+	• Sev-C: 8 hours, business hours
 
-4. **Allow Ticket Creation**:
-   - Go to Admin Panel -> Settings -> User Settings
-   - Set registration to "Require registration and login to create tickets."
-
-5. **Add Agents**:
-   - Go to Admin Panel -> Agents -> Add New
-   - Add agents like Jane and John.
-
-6. **Add Users**:
-   - Go to Agent Panel -> Users -> Add New
-   - Add users like Karen and Ken.
-
-7. **Configure SLA**:
-   - Go to Admin Panel -> Manage -> SLA
-   - Set SLAs for Sev-A (1 hour, 24/7), Sev-B (4 hours, 24/7), and Sev-C (8 hours, business hours).
-
-8. **Set Up Help Topics**:
-   - Go to Admin Panel -> Manage -> Help Topics
-   - Add topics such as Business Critical Outage, Personal Computer Issues, Equipment Request, and Password Reset.
+5. 📋 Help Topics
+     - Go to: Manage → Help Topics → Add:
+	• Business Critical Outage
+	• Personal Computer Issues
+	• Equipment Request
+	• Password Reset
   
 -----
 
-## Part 4: Manage Tickets
+### 🎫 Part 4: Practice Ticket Management
 
-1. **Practice Ticket Management**:
-   - Create, triage, and resolve tickets.
-   - For practice, refer to different ticket severity levels (e.g., Sev-A for major issues, Sev-B for moderate issues).
+1. Create tickets as a user
+2. Respond and resolve them as an agent
+3. Triage based on severity level (Sev-A, B, C)
   
 -----
 
-## Conclusion
+## ✅ Final Thoughts
 
-Congratulations, you’ve set up a helpdesk system capable of managing tickets, configured roles and departments, and ensured that your system is ready for use.
+You’ve installed and configured osTicket in an Azure-hosted Windows environment! This helpdesk system is a great way for you to learn real-world ticket management and internal IT operations.
+
+- 🔐 Next Steps (Optional)
+	• Enable email piping with SMTP
+	• Integrate LDAP authentication
+	• Set up SSL with a self-signed certificate
+
+-----
+
+## 💡 Helpful Tips
+
+- Use macOS or Windows with Microsoft Remote Desktop to connect
+- Test with real scenarios (password resets, equipment requests, escalations)
+- Backup your VM regularly in Azure for disaster recovery
+
+-----
+
+### 🧠 Want to Learn More?
+
+- [osTicket Docs](https://docs.osticket.com/en/latest/)
+
+- [Azure VM Setup](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal)
